@@ -1,0 +1,26 @@
+.ProductItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.ProductItem .imageContainer img {
+  width: 275px;
+  height: 286px;
+  position: relative;
+  z-index: -2;
+  object-fit: cover;
+}
+.styleBorder {
+  height: 286px;
+  width: 275px;
+  position: relative;
+  margin-top: -258px;
+  margin-right: auto;
+  margin-left: 21px;
+  border: 7px solid #5b6b3e;
+  z-index: 2;
+}
+
+.ProductItem:nth-child(even) {
+  flex-direction: column-reverse;
+}

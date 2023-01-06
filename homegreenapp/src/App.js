@@ -1,5 +1,7 @@
 import "./App.css";
 import TopHeader from "./components/topHeader";
+import TopProducts from "./components/TopProducts";
+import HomeView from "./views/HomeView";
 
 function App() {
   return (
@@ -7,6 +9,8 @@ function App() {
       <header className="App-header">
         <TopHeader />
       </header>
+      <HomeView />
+      <TopProducts />
     </div>
   );
 }

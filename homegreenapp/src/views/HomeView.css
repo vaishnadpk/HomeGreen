@@ -1,0 +1,39 @@
+.homepage {
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.homeContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25)
+    ),
+    url(../static/h-min.jpeg);
+  background-position: 50% 50%;
+  background-size: cover;
+  min-height: 500px;
+}
+.homeContainer h1 {
+  font-family: Oswald, sans-serif;
+  font-weight: 400;
+  margin: 60px 0 0 391px;
+  font-size: 60px;
+  color: #fff;
+}
+.homeContainer button {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  background-image: none;
+  border-style: none;
+  align-self: flex-end;
+  padding: 19px 47px 20px;
+  margin: 20px 50px auto;
+}
