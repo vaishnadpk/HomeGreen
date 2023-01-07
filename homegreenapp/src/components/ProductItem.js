@@ -1,7 +1,7 @@
 import React from "react";
 import "./ProductItem.css";
 
-function ProductItem({ image, heading }) {
+function ProductItem({ image, heading, description }) {
   return (
     <div className={"ProductItem"}>
       <div className="imageContainer">
@@ -11,12 +11,7 @@ function ProductItem({ image, heading }) {
 
       <div className="itemDescription">
         <h4>{heading} </h4>
-        <p>
-          A houseplant, sometimes known as a pot plant, potted plant, or an
-          indoor plant, is an ornamental plant that is grown indoors. As such,
-          they are found in places like residences and offices, mainly for
-          decorative purposes.
-        </p>
+        <p>{description}</p>
       </div>
     </div>
   );

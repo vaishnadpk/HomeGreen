@@ -10,29 +10,36 @@ function TopProducts() {
     {
       imageUrl: image1,
       heading: "Indoor Plants",
-      description: "Indoor plants gives a nature feel at home",
+      description:
+        "Indoor plant, is an ornamental plant that is grown indoors. As such, they are found in places like residences and offices, mainly for decorative purposes.",
     },
     {
       imageUrl: image2,
       heading: "Home Decor",
-      description: "Home Decor gives a nature feel at home",
+      description:
+        "Green plants with colorful leaves, retro plants and flowering plants are at the top of the list of this year's favourites.",
     },
     {
       imageUrl: image3,
       heading: "Flower Vase",
-      description: "Flower Vase gives a nature feel at home",
+      description:
+        "A flower glass vase goes from treasure to trash, the moment it is broken. Fortunately, something else happens to you and me. Pick up your pieces.",
     },
   ];
   return (
-    <div className="productContainer">
-      {itemDetails.map((x, index) => (
-        <ProductItem
-          key={index}
-          image={x.imageUrl}
-          heading={x.heading}
-          imagePosition={index === 1 ? "BOTTOM" : "TOP"}
-        />
-      ))}
+    <div>
+      <h1>Furniture & Decor</h1>
+      <div className="productContainer">
+        {itemDetails.map((x, index) => (
+          <ProductItem
+            key={index}
+            image={x.imageUrl}
+            heading={x.heading}
+            description={x.description}
+            imagePosition={index === 1 ? "BOTTOM" : "TOP"}
+          />
+        ))}
+      </div>
     </div>
   );
 }

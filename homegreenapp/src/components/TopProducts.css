@@ -3,3 +3,9 @@
   margin: 25px;
   justify-content: space-evenly;
 }
+h1 {
+  font-size: 96px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #5b6b3e;
+}
