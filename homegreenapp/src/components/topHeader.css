@@ -1,7 +1,31 @@
+.topContainer {
+  background-color: #71886d;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  left: 0;
+  z-index: 3;
+}
 .topHeader {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: auto 25px;
   align-items: center;
+}
+h3 .leftICon {
+  position: relative;
+  top: 5px;
+  right: 5px;
+}
+.rightIcon1 {
+  margin-right: 5px;
+}
+.rightIcon2 {
+  position: relative;
+  top: 6px;
+}
+.rightClicks {
+  display: flex;
+  flex-direction: row;
 }
