@@ -3,7 +3,6 @@ import ProductCounter from "./components/ProductCounter";
 import TopHeader from "./components/topHeader";
 import TopProducts from "./components/TopProducts";
 import HomeView from "./views/HomeView";
-import Counter from "./components/Counter";
 
 function App() {
   return (
@@ -14,7 +13,6 @@ function App() {
       <HomeView />
       <TopProducts />
       <ProductCounter />
-      <Counter />
     </div>
   );
 }

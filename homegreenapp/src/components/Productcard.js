@@ -5,19 +5,25 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
-import Image from "../static/Fiscuselastica.jpeg";
+import "./productCard.css";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 
-export default function MultiActionAreaCard() {
-  const value = 4;
+export default function MultiActionAreaCard({
+  image,
+  value,
+  productName,
+  height,
+  color,
+  price,
+}) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 325 }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="300"
-          image={Image}
-          alt="green iguana"
+          image={image}
+          alt="Window ficus on stem"
         />
         <CardContent>
           <Box
@@ -30,13 +36,13 @@ export default function MultiActionAreaCard() {
           </Box>
 
           <Typography gutterBottom variant="h5" component="div">
-            Window ficus on stem
+            {productName}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Height 150 cm, Green
+            Height {height}cm, {color}
           </Typography>
           <Typography variant="subtitle1" color="text.secondary">
-            1133 kr
+            {price} kr
           </Typography>
         </CardContent>
       </CardActionArea>

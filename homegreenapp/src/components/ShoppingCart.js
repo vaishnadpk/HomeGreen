@@ -10,6 +10,8 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Counter from "./Counter";
+import "./ShoppingCart.css";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -59,6 +61,10 @@ export default function CustomizedDialogs() {
     setOpen(false);
   };
 
+  const handleQuatityChange = (item) => {
+    console.log(item);
+  };
+
   return (
     <div>
       <IconButton
@@ -72,6 +78,7 @@ export default function CustomizedDialogs() {
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
+        className="position"
       >
         <BootstrapDialogTitle
           id="customized-dialog-title"
@@ -80,16 +87,9 @@ export default function CustomizedDialogs() {
           Shopping cart
         </BootstrapDialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>Fista elastica</Typography>
+          <Typography gutterBottom>In Cart</Typography>
           <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-            dui. Donec ullamcorper nulla non metus auctor fringilla.
+            <Counter onQuantityChanged={handleQuatityChange} />
           </Typography>
         </DialogContent>
         <DialogActions>

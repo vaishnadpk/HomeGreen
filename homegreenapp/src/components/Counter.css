@@ -1,0 +1,27 @@
+.features {
+  font-size: small;
+  opacity: 0.85;
+}
+.minus,
+.plus {
+  font-size: 18px;
+  padding: 5px 10px;
+  margin: 10px;
+  color: white;
+  background-color: #71886d;
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.minus {
+  padding: 5px 12px;
+}
+.opa {
+  opacity: 0.75;
+}
+.bold {
+  font-weight: 900;
+}
+.size {
+  min-width: 600px;
+}
