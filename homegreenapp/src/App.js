@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./components/Footer";
 import ProductCounter from "./components/ProductCounter";
 import TopHeader from "./components/topHeader";
 import TopProducts from "./components/TopProducts";
@@ -13,6 +14,7 @@ function App() {
       <HomeView />
       <TopProducts />
       <ProductCounter />
+      <Footer />
     </div>
   );
 }

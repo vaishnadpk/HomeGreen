@@ -12,6 +12,7 @@ import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Counter from "./Counter";
 import "./ShoppingCart.css";
+import { Drawer } from "@mui/material";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -74,7 +75,23 @@ export default function CustomizedDialogs() {
       >
         <ShoppingCartIcon />
       </IconButton>
-      <BootstrapDialog
+
+      <Drawer
+        anchor={"right"}
+        open={open}
+        onClose={handleClose}
+        variant="persistent"
+      >
+        <Typography gutterBottom>In Cart</Typography>
+        <Typography gutterBottom>
+          <Counter onQuantityChanged={handleQuatityChange} />
+        </Typography>
+        <Button autoFocus onClick={handleClose}>
+          To the Checkout
+        </Button>
+      </Drawer>
+
+      {/* <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
@@ -97,7 +114,7 @@ export default function CustomizedDialogs() {
             To the Checkout
           </Button>
         </DialogActions>
-      </BootstrapDialog>
+      </BootstrapDialog> */}
     </div>
   );
 }

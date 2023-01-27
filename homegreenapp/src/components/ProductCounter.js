@@ -4,6 +4,7 @@ import Image1 from "../static/Fiscuselastica.jpeg";
 import Image2 from "../static/Tulips 10 pack.jpeg";
 import Image3 from "../static/PhilodendronRojoCongo.jpeg";
 import Image4 from "../static/Goldenpalm.jpeg";
+import Button from "@mui/material/Button";
 import "./ProductCounter.css";
 
 function ProductCounter() {
@@ -42,18 +43,23 @@ function ProductCounter() {
     },
   ];
   return (
-    <div className="productCardContainer">
-      {productDetails.map((x, index) => (
-        <Productcard
-          key={index}
-          image={x.imageUrl}
-          value={x.ratingValue}
-          productName={x.productName}
-          height={x.height}
-          color={x.color}
-          price={x.price}
-        />
-      ))}
+    <div>
+      <div className="productCardContainer">
+        {productDetails.map((x, index) => (
+          <Productcard
+            key={index}
+            image={x.imageUrl}
+            value={x.ratingValue}
+            productName={x.productName}
+            height={x.height}
+            color={x.color}
+            price={x.price}
+          />
+        ))}
+      </div>
+      <Button variant="outlined" size="large">
+        Show more
+      </Button>
     </div>
   );
 }
