@@ -1,5 +1,5 @@
 import React from "react";
-import Productcard from "./Productcard";
+import Productcard from "./productCard";
 import Image1 from "../static/Fiscuselastica.jpeg";
 import Image2 from "../static/Tulips 10 pack.jpeg";
 import Image3 from "../static/PhilodendronRojoCongo.jpeg";

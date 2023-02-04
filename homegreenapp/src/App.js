@@ -1,8 +1,8 @@
 import "./App.css";
-import Footer from "./components/Footer";
-import ProductCounter from "./components/ProductCounter";
+import Footer from "./components/footer";
+import ProductCounter from "./components/productCounter";
 import TopHeader from "./components/topHeader";
-import TopProducts from "./components/TopProducts";
+import TopProducts from "./components/topProducts";
 import HomeView from "./views/HomeView";
 
 function App() {

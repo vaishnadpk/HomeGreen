@@ -10,7 +10,7 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import Counter from "./Counter";
+import Counter from "../counter";
 import "./ShoppingCart.css";
 import { Drawer } from "@mui/material";
 

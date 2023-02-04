@@ -1,10 +1,10 @@
 import React from "react";
 import "./topHeader.css";
 import GrassIcon from "@mui/icons-material/Grass";
-import ShoppingCart from "./ShoppingCart";
+import ShoppingCart from "./cart/shoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 
-import UseAutocomplete from "./UseAutocomplete";
+import UseAutocomplete from "./useAutocomplete";
 function TopHeader() {
   return (
     <div className="topContainer">
