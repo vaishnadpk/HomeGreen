@@ -1,27 +1,18 @@
 import * as React from "react";
 import PropTypes from "prop-types";
+import CloseIcon from "@mui/icons-material/Close";
+import { Drawer } from "@mui/material";
 import Button from "@mui/material/Button";
-import { styled } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
-import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
+import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import Counter from "../counter";
-import "./ShoppingCart.css";
-import { Drawer } from "@mui/material";
 
-const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  "& .MuiDialogContent-root": {
-    padding: theme.spacing(2),
-  },
-  "& .MuiDialogActions-root": {
-    padding: theme.spacing(1),
-  },
-}));
+import Counter from "../counter";
+import CartBadge from "./cartBadge";
+
+import "./ShoppingCart.css";
 
 function BootstrapDialogTitle(props) {
   const { children, onClose, ...other } = props;
@@ -68,19 +59,13 @@ export default function CustomizedDialogs() {
 
   return (
     <div>
-      <IconButton
-        color="neutral"
-        aria-label="add to shopping cart"
-        onClick={handleClickOpen}
-      >
-        <ShoppingCartIcon />
-      </IconButton>
+      <CartBadge onClick={handleClickOpen} />
 
       <Drawer
         anchor={"right"}
         open={open}
         onClose={handleClose}
-        variant="persistent"
+        variant="temporary"
       >
         <Typography gutterBottom>In Cart</Typography>
         <Typography gutterBottom>
@@ -90,31 +75,6 @@ export default function CustomizedDialogs() {
           To the Checkout
         </Button>
       </Drawer>
-
-      {/* <BootstrapDialog
-        onClose={handleClose}
-        aria-labelledby="customized-dialog-title"
-        open={open}
-        className="position"
-      >
-        <BootstrapDialogTitle
-          id="customized-dialog-title"
-          onClose={handleClose}
-        >
-          Shopping cart
-        </BootstrapDialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>In Cart</Typography>
-          <Typography gutterBottom>
-            <Counter onQuantityChanged={handleQuatityChange} />
-          </Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleClose}>
-            To the Checkout
-          </Button>
-        </DialogActions>
-      </BootstrapDialog> */}
     </div>
   );
 }
