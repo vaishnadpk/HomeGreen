@@ -1,12 +1,18 @@
 import * as React from "react";
-import PropTypes from "prop-types";
-import CloseIcon from "@mui/icons-material/Close";
-import { Drawer } from "@mui/material";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import ListIcon from "@mui/icons-material/List";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import {
+  Drawer,
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  ListItem,
+} from "@mui/material";
 import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogTitle from "@mui/material/DialogTitle";
-import IconButton from "@mui/material/IconButton";
-import { styled } from "@mui/material/styles";
+import Collapse from "@mui/material/Collapse";
 import Typography from "@mui/material/Typography";
 
 import Counter from "../counter";
@@ -14,37 +20,10 @@ import CartBadge from "./cartBadge";
 
 import "./ShoppingCart.css";
 
-function BootstrapDialogTitle(props) {
-  const { children, onClose, ...other } = props;
-
-  return (
-    <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
-      {children}
-      {onClose ? (
-        <IconButton
-          aria-label="close"
-          onClick={onClose}
-          sx={{
-            position: "absolute",
-            right: 8,
-            top: 8,
-            color: (theme) => theme.palette.grey[500],
-          }}
-        >
-          <CloseIcon />
-        </IconButton>
-      ) : null}
-    </DialogTitle>
-  );
-}
-
-BootstrapDialogTitle.propTypes = {
-  children: PropTypes.node,
-  onClose: PropTypes.func.isRequired,
-};
-
 export default function CustomizedDialogs() {
   const [open, setOpen] = React.useState(false);
+  const [openItemPanel, setOpenItemPanel] = React.useState(true);
+  const [openCustomerPanel, setCustomerItemPanel] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -55,6 +34,14 @@ export default function CustomizedDialogs() {
 
   const handleQuatityChange = (item) => {
     console.log(item);
+  };
+
+  const handleItemPanelClick = () => {
+    setOpenItemPanel(!openItemPanel);
+  };
+
+  const handleCustomerPanelClick = () => {
+    setCustomerItemPanel(!openCustomerPanel);
   };
 
   return (
@@ -68,9 +55,47 @@ export default function CustomizedDialogs() {
         variant="temporary"
       >
         <Typography gutterBottom>In Cart</Typography>
-        <Typography gutterBottom>
-          <Counter onQuantityChanged={handleQuatityChange} />
-        </Typography>
+        <Typography gutterBottom></Typography>
+        <List>
+          <ListItemButton onClick={handleItemPanelClick}>
+            <ListItemIcon>
+              <ListIcon />
+            </ListItemIcon>
+            <ListItemText primary="Items" />
+            {openItemPanel ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+          <ListItem>
+            <Collapse in={openItemPanel} timeout="auto">
+              <Counter onQuantityChanged={handleQuatityChange} />
+            </Collapse>
+          </ListItem>
+          <ListItemButton onClick={handleCustomerPanelClick}>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText primary="Customer" />
+            {openCustomerPanel ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+          <ListItem>
+            <Collapse in={openCustomerPanel} timeout="auto" unmountOnExit>
+              <spa>Customer</spa>
+            </Collapse>
+          </ListItem>
+
+          <ListItemButton onClick={handleCustomerPanelClick}>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText primary="Services" />
+            {openCustomerPanel ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+          <ListItem>
+            <Collapse in={openCustomerPanel} timeout="auto" unmountOnExit>
+              <spa>Services</spa>
+            </Collapse>
+          </ListItem>
+        </List>
+
         <Button autoFocus onClick={handleClose}>
           To the Checkout
         </Button>

@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./HomeView.css";
 
 export default function HomeView() {
@@ -8,7 +9,7 @@ export default function HomeView() {
         Plants instantly attracts eye,calms the soul and brings peacefulness to
         your room
       </h1>
-      <button>Learn more</button>
+      <button>Upto 60% discount</button>
     </div>
   );
 }

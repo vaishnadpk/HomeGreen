@@ -11,9 +11,12 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
+      const { id, name, quantity } = action.payload;
+      const items = [...state.items];
+      items.push({ id, name, quantity });
       return {
         ...state,
-        items: [...state.items, action.payload.items],
+        items: items,
       };
     case REMOVE_CART:
       return {

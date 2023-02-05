@@ -1,6 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 
+import DiscountItems from "./components/discountItems";
 import Footer from "./components/footer";
 import ProductCounter from "./components/productCounter";
 import TopHeader from "./components/topHeader";
@@ -19,6 +20,7 @@ function App() {
         </header>
         <HomeView />
         <TopProducts />
+        <DiscountItems />
         <ProductCounter />
         <Footer />
       </div>
