@@ -13,10 +13,12 @@ import {
 } from "@mui/material";
 import Button from "@mui/material/Button";
 import Collapse from "@mui/material/Collapse";
-import Typography from "@mui/material/Typography";
 
 import Counter from "../counter";
 import CartBadge from "./cartBadge";
+import CartItem from "./cartItem";
+import CustomerForm from "./customerForm";
+import Services from "./services";
 
 import "./ShoppingCart.css";
 
@@ -24,6 +26,7 @@ export default function CustomizedDialogs() {
   const [open, setOpen] = React.useState(false);
   const [openItemPanel, setOpenItemPanel] = React.useState(true);
   const [openCustomerPanel, setCustomerItemPanel] = React.useState(false);
+  const [openServicesPanel, setServicesItemPanel] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -44,6 +47,9 @@ export default function CustomizedDialogs() {
     setCustomerItemPanel(!openCustomerPanel);
   };
 
+  const handleServicesPanelClick = () => {
+    setServicesItemPanel(!openServicesPanel);
+  };
   return (
     <div>
       <CartBadge onClick={handleClickOpen} />
@@ -54,9 +60,8 @@ export default function CustomizedDialogs() {
         onClose={handleClose}
         variant="temporary"
       >
-        <Typography gutterBottom>In Cart</Typography>
-        <Typography gutterBottom></Typography>
-        <List>
+        <h5 style={{ paddingLeft: "20px" }}>My Cart</h5>
+        <List style={{ width: "480px" }}>
           <ListItemButton onClick={handleItemPanelClick}>
             <ListItemIcon>
               <ListIcon />
@@ -66,7 +71,9 @@ export default function CustomizedDialogs() {
           </ListItemButton>
           <ListItem>
             <Collapse in={openItemPanel} timeout="auto">
-              <Counter onQuantityChanged={handleQuatityChange} />
+              {[1, 2, 3].map((x) => (
+                <CartItem key={x} />
+              ))}
             </Collapse>
           </ListItem>
           <ListItemButton onClick={handleCustomerPanelClick}>
@@ -78,20 +85,20 @@ export default function CustomizedDialogs() {
           </ListItemButton>
           <ListItem>
             <Collapse in={openCustomerPanel} timeout="auto" unmountOnExit>
-              <spa>Customer</spa>
+              <CustomerForm />
             </Collapse>
           </ListItem>
 
-          <ListItemButton onClick={handleCustomerPanelClick}>
+          <ListItemButton onClick={handleServicesPanelClick}>
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
             <ListItemText primary="Services" />
-            {openCustomerPanel ? <ExpandLess /> : <ExpandMore />}
+            {openServicesPanel ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
           <ListItem>
-            <Collapse in={openCustomerPanel} timeout="auto" unmountOnExit>
-              <spa>Services</spa>
+            <Collapse in={openServicesPanel} timeout="auto" unmountOnExit>
+              <Services></Services>
             </Collapse>
           </ListItem>
         </List>

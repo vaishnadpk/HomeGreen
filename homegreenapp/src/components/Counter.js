@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Grid from "@mui/material/Grid";
 import DeleteIcon from "@mui/icons-material/Delete";
+import Grid from "@mui/material/Grid";
+
 import "./Counter.css";
 
 function Counter({ onQuantityChanged }) {
@@ -49,7 +50,6 @@ function Counter({ onQuantityChanged }) {
           <strong>1133 Kr</strong>
         </Grid>
       </Grid>
-      <span></span>
     </div>
   );
 }

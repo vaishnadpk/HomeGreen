@@ -1,4 +1,8 @@
 import React from "react";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 import "./Footer.css";
 
@@ -7,10 +11,10 @@ function Footer() {
     <div className="footer-container">
       <section className="footer-subscription">
         <p className="footer-subscription-heading">
-          Join the Adventure newsletter to receive our best vacation deals
+          Become a member of our customer club
         </p>
         <p className="footer-subscription-text">
-          You can unsubscribe at any time.
+          Get a 2% bonus on all your purchases.
         </p>
         <div className="input-areas">
           <form>
@@ -20,7 +24,7 @@ function Footer() {
               type="email"
               placeholder="Your Email"
             />
-            <button buttonStyle="btn--outline">Subscribe</button>
+            <button buttonStyle="btn--outline">Sign in</button>
           </form>
         </div>
       </section>
@@ -75,7 +79,7 @@ function Footer() {
               target="_blank"
               aria-label="Facebook"
             >
-              <i className="fab fa-facebook-f" />
+              <FacebookIcon />
             </a>
             <a
               className="social-icon-link instagram"
@@ -83,7 +87,7 @@ function Footer() {
               target="_blank"
               aria-label="Instagram"
             >
-              <i className="fab fa-instagram" />
+              <InstagramIcon />
             </a>
             <a
               className="social-icon-link youtube"
@@ -91,7 +95,7 @@ function Footer() {
               target="_blank"
               aria-label="Youtube"
             >
-              <i className="fab fa-youtube" />
+              <YouTubeIcon />
             </a>
             <a
               className="social-icon-link twitter"
@@ -99,7 +103,7 @@ function Footer() {
               target="_blank"
               aria-label="Twitter"
             >
-              <i className="fab fa-twitter" />
+              <TwitterIcon />
             </a>
             <a
               className="social-icon-link twitter"
