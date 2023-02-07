@@ -1,9 +1,11 @@
 import React from "react";
-import ProductItem from "./productItem";
-import "./TopProducts.css";
+
 import image1 from "../static/topimage 1.jpeg";
 import image2 from "../static/topimage2.jpeg";
 import image3 from "../static/topimage3.jpeg";
+import ProductItem from "./productItem";
+
+import "./TopProducts.css";
 
 function TopProducts() {
   const itemDetails = [

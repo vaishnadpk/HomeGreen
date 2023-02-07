@@ -4,6 +4,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
+import imageLogo from "../static/logo.png";
+
 import "./Footer.css";
 
 function Footer() {
@@ -67,8 +69,8 @@ function Footer() {
         <div className="social-media-wrap">
           <div className="footer-logo">
             <a href="/" className="social-logo">
-              HG
-              <i className="fab fa-typo3" />
+              <img src={imageLogo} id="logo-image" alt="Logo" />
+              H/G
             </a>
           </div>
           <small className="website-rights">VDPK © 2023</small>

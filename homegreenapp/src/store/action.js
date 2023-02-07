@@ -1,16 +1,16 @@
-import { ADD_TO_CART } from "./actionTypes";
+import { ADD_TO_CART, REMOVE_CART } from "./actionTypes";
 
-const addToCart = ({ id, name, quantity }) => {
+const addToCart = ({ id, name, description, quantity, price }) => {
   return {
     type: ADD_TO_CART,
-    payload: { id, name, quantity },
+    payload: { id, name, quantity, description, price },
   };
 };
 const removeFromCart = (id) => {
   return {
-    type: ADD_TO_CART,
-    payload: { id },
+    type: REMOVE_CART,
+    payload: { id: id },
   };
 };
 
-export { addToCart };
+export { addToCart, removeFromCart };

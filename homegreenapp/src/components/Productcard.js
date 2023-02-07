@@ -1,12 +1,16 @@
 import * as React from "react";
+import { useDispatch } from "react-redux";
+import { Button, CardActionArea, CardActions } from "@mui/material";
+import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
+import Typography from "@mui/material/Typography";
+
+import { addToCart } from "../store/action";
+
 import "./productCard.css";
-import { Button, CardActionArea, CardActions } from "@mui/material";
 
 export default function MultiActionAreaCard({
   image,
@@ -15,7 +19,21 @@ export default function MultiActionAreaCard({
   height,
   color,
   price,
+  productId,
 }) {
+  const dispatch = useDispatch();
+  function onAddToCart() {
+    dispatch(
+      addToCart({
+        id: productId,
+        name: productName,
+        quantity: 1,
+        description: `Height ${height}cm, ${color}`,
+        price: price,
+      })
+    );
+  }
+
   return (
     <Card sx={{ maxWidth: 325 }}>
       <CardActionArea>
@@ -52,6 +70,7 @@ export default function MultiActionAreaCard({
           variant="outlined"
           size="small"
           color="primary"
+          onClick={onAddToCart}
         >
           Add to cart
         </Button>

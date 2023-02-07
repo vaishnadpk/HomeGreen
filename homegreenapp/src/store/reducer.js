@@ -11,17 +11,24 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      const { id, name, quantity } = action.payload;
+      const { id, name, quantity, description, price } = action.payload;
       const items = [...state.items];
-      items.push({ id, name, quantity });
+      const item = items.find((x) => x.id === id);
+      if (item) {
+        item.quantity = item.quantity + 1;
+      } else {
+        items.push({ id, name, quantity, description, price });
+      }
       return {
         ...state,
         items: items,
       };
     case REMOVE_CART:
+      const itemss = state.items.filter((x) => x.id !== action.payload.id);
+      console.log(itemss);
       return {
         ...state,
-        items: state.items.filter((x) => x.id !== action.payload.id),
+        items: itemss,
       };
     case CLEAR_CART:
       return initialState;

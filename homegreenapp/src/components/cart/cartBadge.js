@@ -16,9 +16,13 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 export default function CartBadge({ onClick }) {
   const items = useSelector((state) => state.items);
+  const count =
+    items.length > 0
+      ? items.map((item) => item.quantity).reduce((prev, next) => prev + next)
+      : 0;
   return (
     <IconButton aria-label="cart" onClick={onClick}>
-      <StyledBadge badgeContent={items.length + 1} color="primary">
+      <StyledBadge badgeContent={count} color="primary">
         <ShoppingCartIcon />
       </StyledBadge>
     </IconButton>

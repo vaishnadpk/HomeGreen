@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import ListIcon from "@mui/icons-material/List";
@@ -23,6 +24,8 @@ import Services from "./services";
 import "./ShoppingCart.css";
 
 export default function CustomizedDialogs() {
+  const items = useSelector((state) => state.items);
+
   const [open, setOpen] = React.useState(false);
   const [openItemPanel, setOpenItemPanel] = React.useState(true);
   const [openCustomerPanel, setCustomerItemPanel] = React.useState(false);
@@ -71,8 +74,8 @@ export default function CustomizedDialogs() {
           </ListItemButton>
           <ListItem>
             <Collapse in={openItemPanel} timeout="auto">
-              {[1, 2, 3].map((x) => (
-                <CartItem key={x} />
+              {items.map((x) => (
+                <CartItem key={x.id} item={x} />
               ))}
             </Collapse>
           </ListItem>

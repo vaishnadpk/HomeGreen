@@ -1,15 +1,18 @@
 import React from "react";
-import Productcard from "./productCard";
-import Image1 from "../static/Fiscuselastica.jpeg";
-import Image2 from "../static/Tulips 10 pack.jpeg";
-import Image3 from "../static/PhilodendronRojoCongo.jpeg";
-import Image4 from "../static/Goldenpalm.jpeg";
 import Button from "@mui/material/Button";
+
+import Image1 from "../static/Fiscuselastica.jpeg";
+import Image4 from "../static/Goldenpalm.jpeg";
+import Image3 from "../static/PhilodendronRojoCongo.jpeg";
+import Image2 from "../static/Tulips 10 pack.jpeg";
+import Productcard from "./productCard";
+
 import "./ProductCounter.css";
 
 function ProductCounter() {
   const productDetails = [
     {
+      id: "p1",
       imageUrl: Image1,
       ratingValue: 4,
       productName: "Window ficus on stem",
@@ -18,6 +21,7 @@ function ProductCounter() {
       price: 1130,
     },
     {
+      id: "p2",
       imageUrl: Image2,
       ratingValue: 5,
       productName: "Tulips - 10 pack",
@@ -26,6 +30,7 @@ function ProductCounter() {
       price: 79,
     },
     {
+      id: "p3",
       imageUrl: Image3,
       ratingValue: 3,
       productName: `Philodendron 'Rojo Congo'`,
@@ -34,6 +39,7 @@ function ProductCounter() {
       price: 188,
     },
     {
+      id: "p4",
       imageUrl: Image4,
       ratingValue: 4,
       productName: "Golden Palm",
@@ -54,6 +60,7 @@ function ProductCounter() {
             height={x.height}
             color={x.color}
             price={x.price}
+            productId={x.id}
           />
         ))}
       </div>
