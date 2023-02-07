@@ -1,9 +1,15 @@
-import { ADD_TO_CART, CLEAR_CART, REMOVE_CART } from "./actionTypes";
+import {
+  ADD_TO_CART,
+  CLEAR_CART,
+  REMOVE_CART,
+  ADD_CUSTOMER,
+  ADD_SERVICE,
+} from "./actionTypes";
 
 const initialState = {
   items: [],
-  billingCustomer: undefined,
-  deliveryCustomer: undefined,
+  billingCustomer: {},
+  deliveryCustomer: {},
   services: [],
   cartId: undefined,
 };
@@ -25,13 +31,24 @@ const reducer = (state = initialState, action) => {
       };
     case REMOVE_CART:
       const itemss = state.items.filter((x) => x.id !== action.payload.id);
-      console.log(itemss);
       return {
         ...state,
         items: itemss,
       };
     case CLEAR_CART:
       return initialState;
+    case ADD_CUSTOMER:
+      const { firstName, lastName, address, city, zipCode } = action.payload;
+      return {
+        ...state,
+        billingCustomer: { firstName, lastName, address, city, zipCode },
+        deliveryCustomer: { firstName, lastName, address, city, zipCode },
+      };
+    case ADD_SERVICE:
+      return {
+        ...state,
+        services: action.payload,
+      };
     default:
       return state;
   }

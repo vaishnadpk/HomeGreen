@@ -1,15 +1,28 @@
 import React from "react";
-import {
-  List,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  ListItem,
-  TextField,
-} from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { List, ListItem, TextField } from "@mui/material";
 import { Stack } from "@mui/system";
 
+import { addCustomer } from "../../store/action";
+
 const CustomerForm = () => {
+  const billingCustomer = useSelector((state) => state.billingCustomer);
+  const dispatch = useDispatch();
+
+  const {
+    firstName = "",
+    lastName = "",
+    address = "",
+    city = "",
+    zipCode = "",
+  } = billingCustomer || {};
+
+  function handleOnChange(e) {
+    let cus = { ...billingCustomer };
+    cus[e.target.id] = e.target.value;
+    dispatch(addCustomer({ ...cus }));
+  }
+
   return (
     <List>
       <ListItem>
@@ -23,18 +36,20 @@ const CustomerForm = () => {
           <TextField
             required
             label="First Name"
-            id="filled-size-small"
-            defaultValue=""
+            id="firstName"
+            defaultValue={firstName}
             variant="standard"
             size="small"
+            onBlur={handleOnChange}
           />
           <TextField
             required
             label="Last Name"
-            id="filled-size-small"
-            defaultValue=""
+            id="lastName"
+            defaultValue={lastName}
             variant="standard"
             size="small"
+            onBlur={handleOnChange}
           />
         </Stack>
       </ListItem>
@@ -42,12 +57,13 @@ const CustomerForm = () => {
         <TextField
           required
           label="Address Line 1"
-          id="filled-size-small"
-          defaultValue=""
+          id="address"
+          defaultValue={address}
           variant="standard"
           size="small"
           multiline
           fullWidth
+          onBlur={handleOnChange}
         />
       </ListItem>
       <ListItem>
@@ -61,18 +77,20 @@ const CustomerForm = () => {
           <TextField
             required
             label="Zipcode"
-            id="filled-size-small"
-            defaultValue=""
+            id="zipCode"
+            defaultValue={zipCode}
             variant="standard"
             size="small"
+            onBlur={handleOnChange}
           />
           <TextField
             required
             label="City"
-            id="filled-size-small"
-            defaultValue=""
+            id="city"
+            defaultValue={city}
             variant="standard"
             size="small"
+            onBlur={handleOnChange}
           />
         </Stack>
       </ListItem>

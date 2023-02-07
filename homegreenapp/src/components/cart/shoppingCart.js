@@ -1,9 +1,10 @@
 import * as React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import ListIcon from "@mui/icons-material/List";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
+import ListAltIcon from "@mui/icons-material/ListAlt";
 import {
   Drawer,
   List,
@@ -67,7 +68,7 @@ export default function CustomizedDialogs() {
         <List style={{ width: "480px" }}>
           <ListItemButton onClick={handleItemPanelClick}>
             <ListItemIcon>
-              <ListIcon />
+              <ListAltIcon />
             </ListItemIcon>
             <ListItemText primary="Items" />
             {openItemPanel ? <ExpandLess /> : <ExpandMore />}
@@ -81,7 +82,7 @@ export default function CustomizedDialogs() {
           </ListItem>
           <ListItemButton onClick={handleCustomerPanelClick}>
             <ListItemIcon>
-              <InboxIcon />
+              <AccountBoxIcon />
             </ListItemIcon>
             <ListItemText primary="Customer" />
             {openCustomerPanel ? <ExpandLess /> : <ExpandMore />}
@@ -94,7 +95,7 @@ export default function CustomizedDialogs() {
 
           <ListItemButton onClick={handleServicesPanelClick}>
             <ListItemIcon>
-              <InboxIcon />
+              <DesignServicesIcon />
             </ListItemIcon>
             <ListItemText primary="Services" />
             {openServicesPanel ? <ExpandLess /> : <ExpandMore />}
