@@ -16,6 +16,7 @@ import {
 import Button from "@mui/material/Button";
 import Collapse from "@mui/material/Collapse";
 
+import plantorder from "../../static/plantorder.gif";
 import CartBadge from "./cartBadge";
 import CartItem from "./cartItem";
 import CustomerForm from "./customerForm";
@@ -27,6 +28,8 @@ export default function CustomizedDialogs() {
   const items = useSelector((state) => state.items);
 
   const [open, setOpen] = React.useState(false);
+  const [showAnimation, setShowAnimation] = React.useState(false);
+
   const [openItemPanel, setOpenItemPanel] = React.useState(true);
   const [openCustomerPanel, setCustomerItemPanel] = React.useState(false);
   const [openServicesPanel, setServicesItemPanel] = React.useState(false);
@@ -35,7 +38,11 @@ export default function CustomizedDialogs() {
     setOpen(true);
   };
   const handleClose = () => {
-    setOpen(false);
+    setShowAnimation(true);
+    setTimeout(() => {
+      setOpen(false);
+      setShowAnimation(false);
+    }, 2000);
   };
 
   const handleItemPanelClick = () => {
@@ -105,6 +112,12 @@ export default function CustomizedDialogs() {
         <Button autoFocus onClick={handleClose}>
           To the Checkout
         </Button>
+        {showAnimation && (
+          <img
+            src={plantorder}
+            style={{ margin: "0 auto", width: "150px" }}
+          ></img>
+        )}
       </Drawer>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 
 function DiscountItems() {
-  return <div>discountItems</div>;
+  return <div></div>;
 }
 
 export default DiscountItems;
