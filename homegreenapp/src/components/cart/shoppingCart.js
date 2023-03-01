@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import ExpandLess from "@mui/icons-material/ExpandLess";
@@ -16,7 +16,6 @@ import {
 import Button from "@mui/material/Button";
 import Collapse from "@mui/material/Collapse";
 
-import Counter from "../counter";
 import CartBadge from "./cartBadge";
 import CartItem from "./cartItem";
 import CustomerForm from "./customerForm";
@@ -37,10 +36,6 @@ export default function CustomizedDialogs() {
   };
   const handleClose = () => {
     setOpen(false);
-  };
-
-  const handleQuatityChange = (item) => {
-    console.log(item);
   };
 
   const handleItemPanelClick = () => {
