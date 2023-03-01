@@ -1,7 +1,7 @@
 import * as React from "react";
-import { useAutocomplete } from "@mui/base/AutocompleteUnstyled";
-import { styled } from "@mui/system";
+import useAutocomplete from "@mui/base/useAutocomplete";
 import SearchIcon from "@mui/icons-material/Search";
+import { styled } from "@mui/system";
 
 const Label = styled("label")({
   display: "block",
