@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-06-17T08:22:45.030Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="O2_G8Y2pr5BpURQ2N6y6" version="21.4.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-06-17T08:27:56.471Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="x4Ed2XDN6sbLz36hg6RY" version="21.4.0" type="github">
   <diagram name="Page-1" id="17aHL788k06HH3Q5-m3l">
     <mxGraphModel dx="985" dy="460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -85,6 +85,15 @@
         </mxCell>
         <mxCell id="Kmud7Mku8UZJvtuPcTYq-40" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.http_notification;fillColor=#D9A741;gradientColor=none;" vertex="1" parent="1">
           <mxGeometry x="260" y="380" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Kmud7Mku8UZJvtuPcTYq-41" value="Mobile and Desktop" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="84.71000000000001" y="470" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Kmud7Mku8UZJvtuPcTYq-45" value="" style="points=[[0.35,0,0],[0.98,0.51,0],[1,0.71,0],[0.67,1,0],[0,0.795,0],[0,0.65,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.user;fillColor=#005073;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="125.28" y="510" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Kmud7Mku8UZJvtuPcTYq-46" value="Web App : Front App build on react js and loaded to electronJS for Desktop devices.&lt;br&gt;Mobile - Load react JS app via azure web site" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="620" y="600" width="190" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
